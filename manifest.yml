@@ -1,0 +1,105 @@
+# Standup Digest — the 60-second standup, generated from Jira
+# Codegeist 2026: "Build with context. Ship with confidence."
+# Reads yesterday's activity and today's plan from Jira, groups it by person,
+# and posts a digest everyone can read in a minute.
+modules:
+  # ---------- UI surface ----------
+  jira:globalPage:
+    - key: standup-digest-page
+      resource: main-ui
+      resolver:
+        function: resolver
+      render: native
+      title: Standup Digest
+
+  # ---------- Rovo agent ----------
+  rovo:agent:
+    - key: standup-digest-agent
+      name: Standup Digest
+      description: >-
+        Your daily standup assistant. I read the board's activity since
+        yesterday and produce a per-person digest of what moved, what's next,
+        and what's blocked. Ask me for today's digest.
+      prompt: resource:agent-prompts;digest-agent-prompt.txt
+      conversationStarters:
+        - Give me today's standup digest
+        - What moved on the board since yesterday?
+        - Who's blocked right now?
+        - Summarize the sprint in one paragraph
+      actions:
+        - get-standup-digest
+        - get-blockers
+      followUpPrompt: >-
+        Ask if they'd like the digest posted to a Confluence page or the
+        team channel next time.
+
+  # ---------- Actions ----------
+  action:
+    - key: get-standup-digest
+      name: Get standup digest
+      function: act-get-standup-digest
+      actionVerb: GET
+      description: >-
+        Build a per-person standup digest for a board: work updated since
+        yesterday, planned items, and blockers.
+      inputs:
+        boardId:
+          title: Board ID
+          type: string
+          required: false
+          description: Optional Jira board ID; defaults to the board found in context.
+
+    - key: get-blockers
+      name: Get current blockers
+      function: act-get-blockers
+      actionVerb: GET
+      description: >-
+        List all unresolved issues on the board whose status is Blocked, or
+        that are linked as blocking other unresolved work.
+      inputs:
+        boardId:
+          title: Board ID
+          type: string
+          required: false
+          description: Optional Jira board ID; defaults to the board found in context.
+
+  # ---------- Scheduled daily digest ----------
+  scheduledTrigger:
+    - key: daily-digest-trigger
+      function: daily-digest
+      interval: hour
+
+  # ---------- Backend functions ----------
+  function:
+    - key: resolver
+      handler: index.handler
+    - key: act-get-standup-digest
+      handler: index.actGetStandupDigest
+    - key: act-get-blockers
+      handler: index.actGetBlockers
+    - key: daily-digest
+      handler: index.dailyDigest
+
+resources:
+  - key: main-ui
+    path: src/frontend/index.jsx
+  - key: static-assets
+    path: assets
+  - key: agent-prompts
+    path: prompts
+
+permissions:
+  scopes:
+    - read:jira-work
+    - read:jira-user
+    # agile/board endpoints used by the digest
+    - read:board-scope:jira-software
+    - read:sprint:jira-software
+    - read:issue-details:jira
+    - read:jql:jira
+    - read:project:jira
+
+app:
+  runtime:
+    name: nodejs24.x
+  id: ari:cloud:ecosystem::app/b78f05d3-ecca-42d6-b662-8f9978c3e82c
