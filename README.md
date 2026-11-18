@@ -16,6 +16,13 @@ Rovo agent, or on a schedule.
 | **Standup Digest agent** | `rovo:agent` + 2 actions | "Give me today's standup digest" in Rovo chat — same engine |
 | **Daily refresh** | `scheduledTrigger` | Hourly board refresh keeps digests instant |
 
+## Judge quick path (fresh site, 60 seconds)
+
+The digest page detects an empty site and offers **Generate demo project**:
+one click creates the `SDD` Scrum project with a 10-issue sprint across
+movers, blockers and quiet tickets. Click **Refresh** and a full standup
+digest appears — per-person moved / next / blocked — with no manual setup.
+
 ## Quick start
 
 ```bash

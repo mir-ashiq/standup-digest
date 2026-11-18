@@ -4,6 +4,7 @@
 import Resolver from '@forge/resolver';
 import { getAllBoards, getBoardIssues } from './backend/jira-client';
 import { buildDigest, renderDigest } from './backend/digest-engine';
+import { seedDemoData } from './backend/demo-seeder';
 
 // ---------------------------------------------------------------------------
 // Resolver (frontend bridge)
@@ -11,6 +12,10 @@ import { buildDigest, renderDigest } from './backend/digest-engine';
 const resolver = new Resolver();
 
 resolver.define('getBoards', async () => ({ boards: await getAllBoards() }));
+
+// Empty-site rescue: one click builds the SDD demo project so the digest
+// has people, movement and blockers to show a judge on a fresh site.
+resolver.define('seedDemo', async () => seedDemoData());
 
 resolver.define('getDigest', async ({ payload }) => {
   const boardId = String(payload.boardId || '');

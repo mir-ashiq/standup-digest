@@ -98,6 +98,9 @@ permissions:
     - read:issue-details:jira
     - read:jql:jira
     - read:project:jira
+    # demo-data seeder: create project/sprint on a judge's empty site
+    - write:jira-work
+    - write:sprint:jira-software
 
 app:
   runtime:
