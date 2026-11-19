@@ -1,0 +1,964 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+/**
+ * THIS FILE WAS CREATED VIA CODEGEN DO NOT MODIFY {@see http://go/af-codegen}
+ * @codegen <<SignedSource::f7bfbdc1423194f3133eadeab133a131>>
+ * @codegenCommand yarn build tokens
+ */
+
+var tokens = [{
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "introduced": "0.12.0",
+    "description": "Equates to `0`. Use for resetting default spacing styles."
+  },
+  "value": "0px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "introduced": "0.12.0",
+      "description": "Equates to `0`. Use for resetting default spacing styles."
+    },
+    "value": "Space0"
+  },
+  "name": "space.0",
+  "path": ["space", "0"],
+  "cleanName": "space.0"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "suggest": ["1px", "3px"],
+    "introduced": "0.12.0",
+    "description": "Use for small and compact pieces of UI."
+  },
+  "value": "2px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "suggest": ["1px", "3px"],
+      "introduced": "0.12.0",
+      "description": "Use for small and compact pieces of UI."
+    },
+    "value": "Space025"
+  },
+  "name": "space.025",
+  "path": ["space", "025"],
+  "cleanName": "space.025"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "suggest": ["3px", "5px"],
+    "introduced": "0.12.0",
+    "description": "Use for small and compact pieces of UI."
+  },
+  "value": "4px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "suggest": ["3px", "5px"],
+      "introduced": "0.12.0",
+      "description": "Use for small and compact pieces of UI."
+    },
+    "value": "Space050"
+  },
+  "name": "space.050",
+  "path": ["space", "050"],
+  "cleanName": "space.050"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "suggest": ["5px", "7px"],
+    "introduced": "0.12.0",
+    "description": "Use for small and compact pieces of UI."
+  },
+  "value": "6px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "suggest": ["5px", "7px"],
+      "introduced": "0.12.0",
+      "description": "Use for small and compact pieces of UI."
+    },
+    "value": "Space075"
+  },
+  "name": "space.075",
+  "path": ["space", "075"],
+  "cleanName": "space.075"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "suggest": ["7px", "9px"],
+    "introduced": "0.12.0",
+    "description": "Use for small and compact pieces of UI."
+  },
+  "value": "8px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "suggest": ["7px", "9px"],
+      "introduced": "0.12.0",
+      "description": "Use for small and compact pieces of UI."
+    },
+    "value": "Space100"
+  },
+  "name": "space.100",
+  "path": ["space", "100"],
+  "cleanName": "space.100"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "suggest": ["10px", "11px", "13px", "14px"],
+    "introduced": "0.12.0",
+    "description": "Use for larger and less dense pieces of UI."
+  },
+  "value": "12px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "suggest": ["10px", "11px", "13px", "14px"],
+      "introduced": "0.12.0",
+      "description": "Use for larger and less dense pieces of UI."
+    },
+    "value": "Space150"
+  },
+  "name": "space.150",
+  "path": ["space", "150"],
+  "cleanName": "space.150"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "suggest": ["14px", "15px", "17px", "18px"],
+    "introduced": "0.12.0",
+    "description": "Use for larger and less dense pieces of UI."
+  },
+  "value": "16px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "suggest": ["14px", "15px", "17px", "18px"],
+      "introduced": "0.12.0",
+      "description": "Use for larger and less dense pieces of UI."
+    },
+    "value": "Space200"
+  },
+  "name": "space.200",
+  "path": ["space", "200"],
+  "cleanName": "space.200"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "suggest": ["19px", "21px", "22px", "23px"],
+    "introduced": "0.12.0",
+    "description": "Use for larger and less dense pieces of UI."
+  },
+  "value": "20px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "suggest": ["19px", "21px", "22px", "23px"],
+      "introduced": "0.12.0",
+      "description": "Use for larger and less dense pieces of UI."
+    },
+    "value": "Space250"
+  },
+  "name": "space.250",
+  "path": ["space", "250"],
+  "cleanName": "space.250"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "suggest": ["23px", "25px", "26px", "27px", "28px"],
+    "introduced": "0.12.0",
+    "description": "Use for larger and less dense pieces of UI."
+  },
+  "value": "24px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "suggest": ["23px", "25px", "26px", "27px", "28px"],
+      "introduced": "0.12.0",
+      "description": "Use for larger and less dense pieces of UI."
+    },
+    "value": "Space300"
+  },
+  "name": "space.300",
+  "path": ["space", "300"],
+  "cleanName": "space.300"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "suggest": ["28px", "29px", "30px", "31px", "33px", "34px", "35px"],
+    "introduced": "0.12.0",
+    "description": "Use for the largest pieces of UI and for layout elements."
+  },
+  "value": "32px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "suggest": ["28px", "29px", "30px", "31px", "33px", "34px", "35px"],
+      "introduced": "0.12.0",
+      "description": "Use for the largest pieces of UI and for layout elements."
+    },
+    "value": "Space400"
+  },
+  "name": "space.400",
+  "path": ["space", "400"],
+  "cleanName": "space.400"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "introduced": "0.12.0",
+    "description": "Use for the largest pieces of UI and for layout elements."
+  },
+  "value": "40px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "introduced": "0.12.0",
+      "description": "Use for the largest pieces of UI and for layout elements."
+    },
+    "value": "Space500"
+  },
+  "name": "space.500",
+  "path": ["space", "500"],
+  "cleanName": "space.500"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "introduced": "0.12.0",
+    "description": "Use for the largest pieces of UI and for layout elements."
+  },
+  "value": "48px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "introduced": "0.12.0",
+      "description": "Use for the largest pieces of UI and for layout elements."
+    },
+    "value": "Space600"
+  },
+  "name": "space.600",
+  "path": ["space", "600"],
+  "cleanName": "space.600"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "introduced": "0.12.0",
+    "description": "Use for the largest pieces of UI and for layout elements."
+  },
+  "value": "64px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "introduced": "0.12.0",
+      "description": "Use for the largest pieces of UI and for layout elements."
+    },
+    "value": "Space800"
+  },
+  "name": "space.800",
+  "path": ["space", "800"],
+  "cleanName": "space.800"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "introduced": "0.12.0",
+    "description": "Use for the largest pieces of UI and for layout elements."
+  },
+  "value": "80px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "introduced": "0.12.0",
+      "description": "Use for the largest pieces of UI and for layout elements."
+    },
+    "value": "Space1000"
+  },
+  "name": "space.1000",
+  "path": ["space", "1000"],
+  "cleanName": "space.1000"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "experimental",
+    "replacement": "space.150",
+    "introduced": "20.5.0",
+    "description": "Use for large gaps between elements in horizontal or vertical layouts. Do not use for component insets or dimensions."
+  },
+  "value": "12px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "experimental",
+      "replacement": "space.150",
+      "introduced": "20.5.0",
+      "description": "Use for large gaps between elements in horizontal or vertical layouts. Do not use for component insets or dimensions."
+    },
+    "value": "Space150"
+  },
+  "name": "space.gap.large",
+  "path": ["space", "gap", "large"],
+  "cleanName": "space.gap.large"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "experimental",
+    "replacement": "space.100",
+    "introduced": "20.5.0",
+    "description": "Use for medium gaps between related elements in horizontal or vertical layouts. Do not use for component insets or dimensions."
+  },
+  "value": "8px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "experimental",
+      "replacement": "space.100",
+      "introduced": "20.5.0",
+      "description": "Use for medium gaps between related elements in horizontal or vertical layouts. Do not use for component insets or dimensions."
+    },
+    "value": "Space100"
+  },
+  "name": "space.gap.medium",
+  "path": ["space", "gap", "medium"],
+  "cleanName": "space.gap.medium"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "experimental",
+    "replacement": "space.075",
+    "introduced": "20.5.0",
+    "description": "Use for small gaps between related elements, such as icons and text. Do not use for component insets or dimensions."
+  },
+  "value": "6px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "experimental",
+      "replacement": "space.075",
+      "introduced": "20.5.0",
+      "description": "Use for small gaps between related elements, such as icons and text. Do not use for component insets or dimensions."
+    },
+    "value": "Space075"
+  },
+  "name": "space.gap.small",
+  "path": ["space", "gap", "small"],
+  "cleanName": "space.gap.small"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "experimental",
+    "replacement": "space.200",
+    "introduced": "20.5.0",
+    "description": "Use for extra-large gaps between elements or groups of related content. Do not use for component insets or dimensions."
+  },
+  "value": "16px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "experimental",
+      "replacement": "space.200",
+      "introduced": "20.5.0",
+      "description": "Use for extra-large gaps between elements or groups of related content. Do not use for component insets or dimensions."
+    },
+    "value": "Space200"
+  },
+  "name": "space.gap.xlarge",
+  "path": ["space", "gap", "xlarge"],
+  "cleanName": "space.gap.xlarge"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "experimental",
+    "replacement": "space.050",
+    "introduced": "20.5.0",
+    "description": "Use for extra-small gaps between closely related elements. Do not use for component insets or dimensions."
+  },
+  "value": "4px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "experimental",
+      "replacement": "space.050",
+      "introduced": "20.5.0",
+      "description": "Use for extra-small gaps between closely related elements. Do not use for component insets or dimensions."
+    },
+    "value": "Space050"
+  },
+  "name": "space.gap.xsmall",
+  "path": ["space", "gap", "xsmall"],
+  "cleanName": "space.gap.xsmall"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "experimental",
+    "replacement": "space.300",
+    "introduced": "20.5.0",
+    "description": "Use for the largest gaps between groups of related content. Do not use for component insets or dimensions."
+  },
+  "value": "24px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "experimental",
+      "replacement": "space.300",
+      "introduced": "20.5.0",
+      "description": "Use for the largest gaps between groups of related content. Do not use for component insets or dimensions."
+    },
+    "value": "Space300"
+  },
+  "name": "space.gap.xxlarge",
+  "path": ["space", "gap", "xxlarge"],
+  "cleanName": "space.gap.xxlarge"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "experimental",
+    "replacement": "space.025",
+    "introduced": "20.5.0",
+    "description": "Use for the smallest gaps between closely related elements. Do not use for component insets or dimensions."
+  },
+  "value": "2px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "experimental",
+      "replacement": "space.025",
+      "introduced": "20.5.0",
+      "description": "Use for the smallest gaps between closely related elements. Do not use for component insets or dimensions."
+    },
+    "value": "Space025"
+  },
+  "name": "space.gap.xxsmall",
+  "path": ["space", "gap", "xxsmall"],
+  "cleanName": "space.gap.xxsmall"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "experimental",
+    "replacement": "space.300",
+    "introduced": "20.7.0",
+    "description": "Use for very large padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+  },
+  "value": "24px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "experimental",
+      "replacement": "space.300",
+      "introduced": "20.7.0",
+      "description": "Use for very large padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+    },
+    "value": "Space300"
+  },
+  "name": "space.inset.3xlarge",
+  "path": ["space", "inset", "3xlarge"],
+  "cleanName": "space.inset.3xlarge"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "experimental",
+    "replacement": "space.400",
+    "introduced": "20.10.0",
+    "description": "Use for 32px default padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+  },
+  "value": "32px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "experimental",
+      "replacement": "space.400",
+      "introduced": "20.10.0",
+      "description": "Use for 32px default padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+    },
+    "value": "Space400"
+  },
+  "name": "space.inset.4xlarge",
+  "path": ["space", "inset", "4xlarge"],
+  "cleanName": "space.inset.4xlarge"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "experimental",
+    "replacement": "space.600",
+    "introduced": "20.10.0",
+    "description": "Use for the largest padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+  },
+  "value": "48px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "experimental",
+      "replacement": "space.600",
+      "introduced": "20.10.0",
+      "description": "Use for the largest padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+    },
+    "value": "Space600"
+  },
+  "name": "space.inset.5xlarge",
+  "path": ["space", "inset", "5xlarge"],
+  "cleanName": "space.inset.5xlarge"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "experimental",
+    "replacement": "space.150",
+    "introduced": "20.7.0",
+    "description": "Use for large padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+  },
+  "value": "12px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "experimental",
+      "replacement": "space.150",
+      "introduced": "20.7.0",
+      "description": "Use for large padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+    },
+    "value": "Space150"
+  },
+  "name": "space.inset.large",
+  "path": ["space", "inset", "large"],
+  "cleanName": "space.inset.large"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "experimental",
+    "replacement": "space.100",
+    "introduced": "20.7.0",
+    "description": "Use for medium padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+  },
+  "value": "8px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "experimental",
+      "replacement": "space.100",
+      "introduced": "20.7.0",
+      "description": "Use for medium padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+    },
+    "value": "Space100"
+  },
+  "name": "space.inset.medium",
+  "path": ["space", "inset", "medium"],
+  "cleanName": "space.inset.medium"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "experimental",
+    "replacement": "space.075",
+    "introduced": "20.7.0",
+    "description": "Use for small padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+  },
+  "value": "6px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "experimental",
+      "replacement": "space.075",
+      "introduced": "20.7.0",
+      "description": "Use for small padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+    },
+    "value": "Space075"
+  },
+  "name": "space.inset.small",
+  "path": ["space", "inset", "small"],
+  "cleanName": "space.inset.small"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "experimental",
+    "replacement": "space.200",
+    "introduced": "20.7.0",
+    "description": "Use for extra-large padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+  },
+  "value": "16px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "experimental",
+      "replacement": "space.200",
+      "introduced": "20.7.0",
+      "description": "Use for extra-large padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+    },
+    "value": "Space200"
+  },
+  "name": "space.inset.xlarge",
+  "path": ["space", "inset", "xlarge"],
+  "cleanName": "space.inset.xlarge"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "experimental",
+    "replacement": "space.050",
+    "introduced": "20.7.0",
+    "description": "Use for extra-small padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+  },
+  "value": "4px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "experimental",
+      "replacement": "space.050",
+      "introduced": "20.7.0",
+      "description": "Use for extra-small padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+    },
+    "value": "Space050"
+  },
+  "name": "space.inset.xsmall",
+  "path": ["space", "inset", "xsmall"],
+  "cleanName": "space.inset.xsmall"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "experimental",
+    "replacement": "space.250",
+    "introduced": "20.7.0",
+    "description": "Use for extra-extra-large padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+  },
+  "value": "20px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "experimental",
+      "replacement": "space.250",
+      "introduced": "20.7.0",
+      "description": "Use for extra-extra-large padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+    },
+    "value": "Space250"
+  },
+  "name": "space.inset.xxlarge",
+  "path": ["space", "inset", "xxlarge"],
+  "cleanName": "space.inset.xxlarge"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "experimental",
+    "replacement": "space.025",
+    "introduced": "20.7.0",
+    "description": "Use for the smallest padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+  },
+  "value": "2px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "experimental",
+      "replacement": "space.025",
+      "introduced": "20.7.0",
+      "description": "Use for the smallest padding between a surface and its content, on individual sides or all sides. Do not use for gaps, margins, or dimensions."
+    },
+    "value": "Space025"
+  },
+  "name": "space.inset.xxsmall",
+  "path": ["space", "inset", "xxsmall"],
+  "cleanName": "space.inset.xxsmall"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "suggest": ["-1px", "-3px"],
+    "introduced": "1.21.0",
+    "description": "Use to negate parent whitespace or overlap small pieces of UI."
+  },
+  "value": "-2px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "suggest": ["-1px", "-3px"],
+      "introduced": "1.21.0",
+      "description": "Use to negate parent whitespace or overlap small pieces of UI."
+    },
+    "value": "SpaceNegative025"
+  },
+  "name": "space.negative.025",
+  "path": ["space", "negative", "025"],
+  "cleanName": "space.negative.025"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "suggest": ["-3px", "-5px"],
+    "introduced": "1.21.0",
+    "description": "Use to negate parent whitespace or overlap small pieces of UI."
+  },
+  "value": "-4px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "suggest": ["-3px", "-5px"],
+      "introduced": "1.21.0",
+      "description": "Use to negate parent whitespace or overlap small pieces of UI."
+    },
+    "value": "SpaceNegative050"
+  },
+  "name": "space.negative.050",
+  "path": ["space", "negative", "050"],
+  "cleanName": "space.negative.050"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "suggest": ["-5px", "-7px"],
+    "introduced": "1.21.0",
+    "description": "Use to negate parent whitespace or overlap small pieces of UI."
+  },
+  "value": "-6px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "suggest": ["-5px", "-7px"],
+      "introduced": "1.21.0",
+      "description": "Use to negate parent whitespace or overlap small pieces of UI."
+    },
+    "value": "SpaceNegative075"
+  },
+  "name": "space.negative.075",
+  "path": ["space", "negative", "075"],
+  "cleanName": "space.negative.075"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "suggest": ["-7px", "-9px"],
+    "introduced": "1.21.0",
+    "description": "Use to negate parent whitespace or overlap small pieces of UI."
+  },
+  "value": "-8px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "suggest": ["-7px", "-9px"],
+      "introduced": "1.21.0",
+      "description": "Use to negate parent whitespace or overlap small pieces of UI."
+    },
+    "value": "SpaceNegative100"
+  },
+  "name": "space.negative.100",
+  "path": ["space", "negative", "100"],
+  "cleanName": "space.negative.100"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "suggest": ["-10px", "-11px", "-13px", "-14px"],
+    "introduced": "1.21.0",
+    "description": "Use to negate parent whitespace or overlap larger pieces of UI."
+  },
+  "value": "-12px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "suggest": ["-10px", "-11px", "-13px", "-14px"],
+      "introduced": "1.21.0",
+      "description": "Use to negate parent whitespace or overlap larger pieces of UI."
+    },
+    "value": "SpaceNegative150"
+  },
+  "name": "space.negative.150",
+  "path": ["space", "negative", "150"],
+  "cleanName": "space.negative.150"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "suggest": ["-14px", "-15px", "-17px", "-18px"],
+    "introduced": "1.21.0",
+    "description": "Use to negate parent whitespace or overlap larger pieces of UI."
+  },
+  "value": "-16px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "suggest": ["-14px", "-15px", "-17px", "-18px"],
+      "introduced": "1.21.0",
+      "description": "Use to negate parent whitespace or overlap larger pieces of UI."
+    },
+    "value": "SpaceNegative200"
+  },
+  "name": "space.negative.200",
+  "path": ["space", "negative", "200"],
+  "cleanName": "space.negative.200"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "suggest": ["-19px", "-21px", "-22px", "-23px"],
+    "introduced": "1.21.0",
+    "description": "Use to negate parent whitespace or overlap larger pieces of UI."
+  },
+  "value": "-20px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "suggest": ["-19px", "-21px", "-22px", "-23px"],
+      "introduced": "1.21.0",
+      "description": "Use to negate parent whitespace or overlap larger pieces of UI."
+    },
+    "value": "SpaceNegative250"
+  },
+  "name": "space.negative.250",
+  "path": ["space", "negative", "250"],
+  "cleanName": "space.negative.250"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "suggest": ["-23px", "-25px", "-26px", "-27px", "-28px"],
+    "introduced": "1.21.0",
+    "description": "Use to negate parent whitespace or overlap larger pieces of UI."
+  },
+  "value": "-24px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "suggest": ["-23px", "-25px", "-26px", "-27px", "-28px"],
+      "introduced": "1.21.0",
+      "description": "Use to negate parent whitespace or overlap larger pieces of UI."
+    },
+    "value": "SpaceNegative300"
+  },
+  "name": "space.negative.300",
+  "path": ["space", "negative", "300"],
+  "cleanName": "space.negative.300"
+}, {
+  "attributes": {
+    "group": "spacing",
+    "state": "active",
+    "suggest": ["-28px", "-29px", "-30px", "-31px", "-33px", "-34px", "-35px"],
+    "introduced": "1.21.0",
+    "description": "Use to negate parent whitespace or overlap the largest pieces of UI."
+  },
+  "value": "-32px",
+  "filePath": "schema/themes/atlassian-spacing/spacing.tsx",
+  "isSource": true,
+  "original": {
+    "attributes": {
+      "group": "spacing",
+      "state": "active",
+      "suggest": ["-28px", "-29px", "-30px", "-31px", "-33px", "-34px", "-35px"],
+      "introduced": "1.21.0",
+      "description": "Use to negate parent whitespace or overlap the largest pieces of UI."
+    },
+    "value": "SpaceNegative400"
+  },
+  "name": "space.negative.400",
+  "path": ["space", "negative", "400"],
+  "cleanName": "space.negative.400"
+}];
+var _default = exports.default = tokens;

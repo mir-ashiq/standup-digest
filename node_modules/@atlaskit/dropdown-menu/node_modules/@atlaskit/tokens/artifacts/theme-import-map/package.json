@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/artifacts/theme-import-map",
+  "main": "../../dist/cjs/artifacts/theme-import-map.js",
+  "module": "../../dist/esm/artifacts/theme-import-map.js",
+  "module:es2019": "../../dist/es2019/artifacts/theme-import-map.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../../dist/types/artifacts/theme-import-map.d.ts"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/theme-mutation-observer",
+  "main": "../dist/cjs/theme-mutation-observer.js",
+  "module": "../dist/esm/theme-mutation-observer.js",
+  "module:es2019": "../dist/es2019/theme-mutation-observer.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/theme-mutation-observer.d.ts"
+}

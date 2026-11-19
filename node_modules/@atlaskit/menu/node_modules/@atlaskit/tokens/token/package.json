@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/token",
+  "main": "../dist/cjs/index.js",
+  "module": "../dist/esm/index.js",
+  "module:es2019": "../dist/es2019/index.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/index.d.ts"
+}

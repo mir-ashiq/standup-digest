@@ -38,7 +38,9 @@ export function buildDigest(issues, now = Date.now(), sinceHours = 24) {
     const assignee = issue.assignee || 'Unassigned';
     const touched = lastTouched(issue) ? lastTouched(issue).getTime() : 0;
     const movedRecently = touched >= cutoff;
-    const isBlocked = /block/i.test(String(issue.status || ''));
+    const isBlocked =
+      /block/i.test(String(issue.status || '')) ||
+      (Array.isArray(issue.blockingLinks) && issue.blockingLinks.some((l) => !l.resolved));
 
     if (isBlocked) bucket(assignee).blocked.push(issue.key);
     else if (movedRecently) bucket(assignee).moved.push(issue.key);

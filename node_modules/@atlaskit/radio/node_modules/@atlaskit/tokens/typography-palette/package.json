@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/typography-palette",
+  "main": "../dist/cjs/artifacts/palettes-raw/typography-palette.js",
+  "module": "../dist/esm/artifacts/palettes-raw/typography-palette.js",
+  "module:es2019": "../dist/es2019/artifacts/palettes-raw/typography-palette.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/artifacts/palettes-raw/typography-palette.d.ts"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/theme-state-defaults",
+  "main": "../dist/cjs/theme-state-defaults.js",
+  "module": "../dist/esm/theme-state-defaults.js",
+  "module:es2019": "../dist/es2019/theme-state-defaults.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/theme-state-defaults.d.ts"
+}

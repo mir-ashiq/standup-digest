@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/get-theme-preferences",
+  "main": "../dist/cjs/utils/get-theme-preferences.js",
+  "module": "../dist/esm/utils/get-theme-preferences.js",
+  "module:es2019": "../dist/es2019/utils/get-theme-preferences.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/utils/get-theme-preferences.d.ts"
+}

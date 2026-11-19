@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/UNSAFE_test-dark",
+  "main": "../dist/cjs/artifacts/tokens-raw/UNSAFE-test-dark.js",
+  "module": "../dist/esm/artifacts/tokens-raw/UNSAFE-test-dark.js",
+  "module:es2019": "../dist/es2019/artifacts/tokens-raw/UNSAFE-test-dark.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/artifacts/tokens-raw/UNSAFE-test-dark.d.ts"
+}

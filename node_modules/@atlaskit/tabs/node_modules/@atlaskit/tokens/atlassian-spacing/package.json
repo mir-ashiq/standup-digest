@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/atlassian-spacing",
+  "main": "../dist/cjs/artifacts/tokens-raw/atlassian-spacing.js",
+  "module": "../dist/esm/artifacts/tokens-raw/atlassian-spacing.js",
+  "module:es2019": "../dist/es2019/artifacts/tokens-raw/atlassian-spacing.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/artifacts/tokens-raw/atlassian-spacing.d.ts"
+}

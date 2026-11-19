@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/utils/get-css-custom-property",
+  "main": "../../dist/cjs/utils/get-css-custom-property.js",
+  "module": "../../dist/esm/utils/get-css-custom-property.js",
+  "module:es2019": "../../dist/es2019/utils/get-css-custom-property.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../../dist/types/utils/get-css-custom-property.d.ts"
+}

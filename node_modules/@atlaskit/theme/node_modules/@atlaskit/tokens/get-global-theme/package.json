@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/get-global-theme",
+  "main": "../dist/cjs/get-global-theme.js",
+  "module": "../dist/esm/get-global-theme.js",
+  "module:es2019": "../dist/es2019/get-global-theme.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/get-global-theme.d.ts"
+}

@@ -26,7 +26,7 @@ export async function getBoardIssues(boardId) {
       const sprint = (sprintJson.values || [])[0];
       if (sprint) {
         const issuesR = await api.asUser().requestJira(
-          route`/rest/agile/1.0/sprint/${sprint.id}/issue?${new URLSearchParams({maxResults: '100', fields: 'summary,status,assignee,updated,created,statuscategorychangedate'})}`
+          route`/rest/agile/1.0/sprint/${sprint.id}/issue?${new URLSearchParams({maxResults: '100', fields: 'summary,status,assignee,updated,created,statuscategorychangedate,issuelinks'})}`
         );
         if (issuesR.status === 200) {
           const issuesJson = await issuesR.json();
@@ -39,7 +39,7 @@ export async function getBoardIssues(boardId) {
   }
   try {
     const r = await api.asUser().requestJira(
-      route`/rest/agile/1.0/board/${boardId}/issue?${new URLSearchParams({maxResults: '100', fields: 'summary,status,assignee,updated,created'})}`
+      route`/rest/agile/1.0/board/${boardId}/issue?${new URLSearchParams({maxResults: '100', fields: 'summary,status,assignee,updated,created,issuelinks'})}`
     );
     if (r.status === 200) {
       const json = await r.json();
@@ -53,6 +53,16 @@ export async function getBoardIssues(boardId) {
 
 function mapIssue(raw) {
   const f = raw.fields || {};
+  const links = Array.isArray(f.issuelinks) ? f.issuelinks : [];
+  const blockingLinks = links
+    .filter((l) => {
+      const inward = String(l.type?.inward || '').toLowerCase();
+      return inward.includes('blocked') && l.inwardIssue;
+    })
+    .map((l) => ({
+      key: l.inwardIssue.key,
+      resolved: Boolean(l.inwardIssue.fields?.resolutiondate),
+    }));
   return {
     key: raw.key,
     summary: f.summary || '',
@@ -61,5 +71,6 @@ function mapIssue(raw) {
     assignee: f.assignee && f.assignee.displayName ? f.assignee.displayName : 'Unassigned',
     updated: f.updated || '',
     created: f.created || '',
+    blockingLinks,
   };
 }

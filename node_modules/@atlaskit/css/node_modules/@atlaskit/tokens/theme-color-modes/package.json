@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/theme-color-modes",
+  "main": "../dist/cjs/theme-color-modes.js",
+  "module": "../dist/esm/theme-color-modes.js",
+  "module:es2019": "../dist/es2019/theme-color-modes.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/theme-color-modes.d.ts"
+}

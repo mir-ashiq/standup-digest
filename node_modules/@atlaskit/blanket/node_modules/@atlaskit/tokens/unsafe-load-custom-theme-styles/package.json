@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/unsafe-load-custom-theme-styles",
+  "main": "../dist/cjs/unsafe-load-custom-theme-styles.js",
+  "module": "../dist/esm/unsafe-load-custom-theme-styles.js",
+  "module:es2019": "../dist/es2019/unsafe-load-custom-theme-styles.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/unsafe-load-custom-theme-styles.d.ts"
+}

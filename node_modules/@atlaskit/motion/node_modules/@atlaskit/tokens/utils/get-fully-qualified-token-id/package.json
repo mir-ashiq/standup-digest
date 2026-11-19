@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/utils/get-fully-qualified-token-id",
+  "main": "../../dist/cjs/utils/get-fully-qualified-token-id.js",
+  "module": "../../dist/esm/utils/get-fully-qualified-token-id.js",
+  "module:es2019": "../../dist/es2019/utils/get-fully-qualified-token-id.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../../dist/types/utils/get-fully-qualified-token-id.d.ts"
+}

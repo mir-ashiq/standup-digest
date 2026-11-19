@@ -1,0 +1,109 @@
+/**
+ * THIS FILE WAS CREATED VIA CODEGEN DO NOT MODIFY {@see http://go/af-codegen}
+ *
+ * This file is intended to help automate renaming of tokens.
+ *
+ * 1. Mark the old token's 'state' as deprecated
+ * 2. Add a 'replacement' attribute to the token with the value 'my.new.token'
+ * 3. Create a new token matching the token above: 'my.new.token'
+ * 4. Run 'yarn build tokens' to have you changes reflected in this map
+ * 5. ESLint and other tools will now use this to automate replacing tokens
+ *
+ * These changes will then be picked up by our tooling which will attempt to
+ * migrate as many of these renames as possible.
+ *
+ * @codegen <<SignedSource::12f7afd89f0a35c6b90c633ae2db060e>>
+ * @codegenCommand yarn build tokens
+ */
+
+var replacementMapper = [{
+  "path": "motion.easing.spring",
+  "state": "experimental"
+}, {
+  "path": "motion.iconography.enter.cycle.up",
+  "state": "experimental"
+}, {
+  "path": "motion.iconography.enter.fade.[default]",
+  "state": "experimental"
+}, {
+  "path": "motion.iconography.enter.fade.fast",
+  "state": "experimental"
+}, {
+  "path": "motion.iconography.exit.cycle.up",
+  "state": "experimental"
+}, {
+  "path": "motion.iconography.exit.fade.[default]",
+  "state": "experimental"
+}, {
+  "path": "motion.iconography.exit.fade.fast",
+  "state": "experimental"
+}, {
+  "path": "space.gap.large",
+  "state": "experimental",
+  "replacement": "space.150"
+}, {
+  "path": "space.gap.medium",
+  "state": "experimental",
+  "replacement": "space.100"
+}, {
+  "path": "space.gap.small",
+  "state": "experimental",
+  "replacement": "space.075"
+}, {
+  "path": "space.gap.xlarge",
+  "state": "experimental",
+  "replacement": "space.200"
+}, {
+  "path": "space.gap.xsmall",
+  "state": "experimental",
+  "replacement": "space.050"
+}, {
+  "path": "space.gap.xxlarge",
+  "state": "experimental",
+  "replacement": "space.300"
+}, {
+  "path": "space.gap.xxsmall",
+  "state": "experimental",
+  "replacement": "space.025"
+}, {
+  "path": "space.inset.3xlarge",
+  "state": "experimental",
+  "replacement": "space.300"
+}, {
+  "path": "space.inset.4xlarge",
+  "state": "experimental",
+  "replacement": "space.400"
+}, {
+  "path": "space.inset.5xlarge",
+  "state": "experimental",
+  "replacement": "space.600"
+}, {
+  "path": "space.inset.large",
+  "state": "experimental",
+  "replacement": "space.150"
+}, {
+  "path": "space.inset.medium",
+  "state": "experimental",
+  "replacement": "space.100"
+}, {
+  "path": "space.inset.small",
+  "state": "experimental",
+  "replacement": "space.075"
+}, {
+  "path": "space.inset.xlarge",
+  "state": "experimental",
+  "replacement": "space.200"
+}, {
+  "path": "space.inset.xsmall",
+  "state": "experimental",
+  "replacement": "space.050"
+}, {
+  "path": "space.inset.xxlarge",
+  "state": "experimental",
+  "replacement": "space.250"
+}, {
+  "path": "space.inset.xxsmall",
+  "state": "experimental",
+  "replacement": "space.025"
+}];
+export default replacementMapper;

@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/get-token",
+  "main": "../dist/cjs/get-token.js",
+  "module": "../dist/esm/get-token.js",
+  "module:es2019": "../dist/es2019/get-token.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/get-token.d.ts"
+}

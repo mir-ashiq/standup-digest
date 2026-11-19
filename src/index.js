@@ -2,6 +2,7 @@
  * Standup Digest — Forge entry point (resolver + 2 actions + scheduled).
  */
 import Resolver from '@forge/resolver';
+import kvs from '@forge/kvs';
 import { getAllBoards, getBoardIssues } from './backend/jira-client';
 import { buildDigest, renderDigest } from './backend/digest-engine';
 import { seedDemoData } from './backend/demo-seeder';
@@ -20,9 +21,12 @@ resolver.define('seedDemo', async () => seedDemoData());
 resolver.define('getDigest', async ({ payload }) => {
   const boardId = String(payload.boardId || '');
   if (!boardId) return { error: 'No board specified.' };
+  const sinceHours = Number(payload.sinceHours) || 24;
   const issues = await getBoardIssues(boardId);
   if (!issues.length) return { error: 'No issues found on this board (or no active sprint).' };
-  const digest = buildDigest(issues);
+  const digest = buildDigest(issues, Date.now(), sinceHours);
+  // Cache the last digest per board so the page renders instantly on reopen.
+  try { await kvs.set(`digest:${boardId}`, { at: digest.generatedAt, sinceHours, digest }); } catch {}
   return { digest, text: renderDigest(digest) };
 });
 
@@ -56,12 +60,18 @@ export async function actGetBlockers(payload) {
 // ---------------------------------------------------------------------------
 // Scheduled trigger: keep KVS fresh for instant panel loads (cheap scan)
 // ---------------------------------------------------------------------------
+/**
+ * Hourly: refresh the cached digest for up to 3 boards so the page loads
+ * instantly (and the agent has a fresh answer) without a live fetch.
+ */
 export async function dailyDigest() {
   try {
     const boards = await getAllBoards();
-    // Refresh at most 3 boards per run to stay within rate limits.
     for (const board of boards.slice(0, 3)) {
-      await getBoardIssues(String(board.id));
+      const issues = await getBoardIssues(String(board.id));
+      if (!issues.length) continue;
+      const digest = buildDigest(issues);
+      try { await kvs.set(`digest:${board.id}`, { at: digest.generatedAt, digest }); } catch {}
     }
   } catch (e) {
     console.error('dailyDigest failed', String(e));

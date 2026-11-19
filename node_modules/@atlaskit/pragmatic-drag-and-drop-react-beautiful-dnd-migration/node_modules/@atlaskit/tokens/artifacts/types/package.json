@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/artifacts/types",
+  "main": "../../dist/cjs/artifacts/types.js",
+  "module": "../../dist/esm/artifacts/types.js",
+  "module:es2019": "../../dist/es2019/artifacts/types.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../../dist/types/artifacts/types.d.ts"
+}

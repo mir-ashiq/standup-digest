@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/palette",
+  "main": "../dist/cjs/artifacts/palettes-raw/palette.js",
+  "module": "../dist/esm/artifacts/palettes-raw/palette.js",
+  "module:es2019": "../dist/es2019/artifacts/palettes-raw/palette.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/artifacts/palettes-raw/palette.d.ts"
+}

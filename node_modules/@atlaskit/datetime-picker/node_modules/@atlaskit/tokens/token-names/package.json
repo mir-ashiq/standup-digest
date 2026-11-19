@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/token-names",
+  "main": "../dist/cjs/artifacts/token-names.js",
+  "module": "../dist/esm/artifacts/token-names.js",
+  "module:es2019": "../dist/es2019/artifacts/token-names.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/artifacts/token-names.d.ts"
+}

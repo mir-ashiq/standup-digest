@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/token-default-values",
+  "main": "../dist/cjs/artifacts/token-default-values.js",
+  "module": "../dist/esm/artifacts/token-default-values.js",
+  "module:es2019": "../dist/es2019/artifacts/token-default-values.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/artifacts/token-default-values.d.ts"
+}

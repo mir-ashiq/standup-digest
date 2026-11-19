@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/babel-plugin",
+  "main": "../dist/cjs/babel-plugin/plugin.js",
+  "module": "../dist/esm/babel-plugin/plugin.js",
+  "module:es2019": "../dist/es2019/babel-plugin/plugin.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/babel-plugin/plugin.d.ts"
+}

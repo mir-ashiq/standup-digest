@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/atlassian-motion",
+  "main": "../dist/cjs/artifacts/tokens-raw/atlassian-motion.js",
+  "module": "../dist/esm/artifacts/tokens-raw/atlassian-motion.js",
+  "module:es2019": "../dist/es2019/artifacts/tokens-raw/atlassian-motion.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/artifacts/tokens-raw/atlassian-motion.d.ts"
+}

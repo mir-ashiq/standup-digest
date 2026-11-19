@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/rename-mapping",
+  "main": "../dist/cjs/artifacts/replacement-mapping.js",
+  "module": "../dist/esm/artifacts/replacement-mapping.js",
+  "module:es2019": "../dist/es2019/artifacts/replacement-mapping.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/artifacts/replacement-mapping.d.ts"
+}

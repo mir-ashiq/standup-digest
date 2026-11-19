@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/token-order",
+  "main": "../dist/cjs/utils/token-order.js",
+  "module": "../dist/esm/utils/token-order.js",
+  "module:es2019": "../dist/es2019/utils/token-order.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/utils/token-order.d.ts"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/theme-ids",
+  "main": "../dist/cjs/theme-ids.js",
+  "module": "../dist/esm/theme-ids.js",
+  "module:es2019": "../dist/es2019/theme-ids.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/theme-ids.d.ts"
+}

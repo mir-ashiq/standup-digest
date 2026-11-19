@@ -1,0 +1,150 @@
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.themeImportMap = exports.default = void 0;
+var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
+function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != (0, _typeof2.default)(e) && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
+/**
+ * THIS FILE WAS CREATED VIA CODEGEN DO NOT MODIFY {@see http://go/af-codegen}
+ *
+ * This file contains a dynamic import for each theme this package exports.
+ * Themes are loaded asynchronously at runtime to minimise the amount of CSS we send to the client.
+ * This allows users to compose their themes and only use the tokens that are requested.
+ * When a new theme is created, the import should automatically be added to the map
+ *
+ * @codegen <<SignedSource::53ff14285f7c9bd19729a6820212b645>>
+ * @codegenCommand yarn build tokens
+ */
+
+var themeImportsMap = exports.themeImportMap = {
+  'light': function light() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_atlassian-light" */
+      './themes/atlassian-light'));
+    });
+  },
+  'light-future': function lightFuture() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_atlassian-light-future" */
+      './themes/atlassian-light-future'));
+    });
+  },
+  'light-finesse': function lightFinesse() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_atlassian-light-finesse" */
+      './themes/atlassian-light-finesse'));
+    });
+  },
+  'light-increased-contrast-finesse': function lightIncreasedContrastFinesse() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_atlassian-light-increased-contrast-finesse" */
+      './themes/atlassian-light-increased-contrast-finesse'));
+    });
+  },
+  'light-increased-contrast': function lightIncreasedContrast() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_atlassian-light-increased-contrast" */
+      './themes/atlassian-light-increased-contrast'));
+    });
+  },
+  'UNSAFE-dynamic': function UNSAFEDynamic() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_UNSAFE-dynamic" */
+      './themes/UNSAFE-dynamic'));
+    });
+  },
+  'UNSAFE-dynamic-dark': function UNSAFEDynamicDark() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_UNSAFE-dynamic-dark" */
+      './themes/UNSAFE-dynamic-dark'));
+    });
+  },
+  'UNSAFE-test-light': function UNSAFETestLight() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_UNSAFE-test-light" */
+      './themes/UNSAFE-test-light'));
+    });
+  },
+  'UNSAFE-test-dark': function UNSAFETestDark() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_UNSAFE-test-dark" */
+      './themes/UNSAFE-test-dark'));
+    });
+  },
+  'dark': function dark() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_atlassian-dark" */
+      './themes/atlassian-dark'));
+    });
+  },
+  'dark-future': function darkFuture() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_atlassian-dark-future" */
+      './themes/atlassian-dark-future'));
+    });
+  },
+  'dark-finesse': function darkFinesse() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_atlassian-dark-finesse" */
+      './themes/atlassian-dark-finesse'));
+    });
+  },
+  'dark-increased-contrast-finesse': function darkIncreasedContrastFinesse() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_atlassian-dark-increased-contrast-finesse" */
+      './themes/atlassian-dark-increased-contrast-finesse'));
+    });
+  },
+  'dark-increased-contrast': function darkIncreasedContrast() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_atlassian-dark-increased-contrast" */
+      './themes/atlassian-dark-increased-contrast'));
+    });
+  },
+  'spacing': function spacing() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_atlassian-spacing" */
+      './themes/atlassian-spacing'));
+    });
+  },
+  'UNSAFE-spacing': function UNSAFESpacing() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_UNSAFE-spacing" */
+      './themes/UNSAFE-spacing'));
+    });
+  },
+  'typography': function typography() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_atlassian-typography" */
+      './themes/atlassian-typography'));
+    });
+  },
+  'UNSAFE-typography': function UNSAFETypography() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_UNSAFE-typography" */
+      './themes/UNSAFE-typography'));
+    });
+  },
+  'typography-finesse': function typographyFinesse() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_atlassian-typography-finesse" */
+      './themes/atlassian-typography-finesse'));
+    });
+  },
+  'shape': function shape() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_atlassian-shape" */
+      './themes/atlassian-shape'));
+    });
+  },
+  'motion': function motion() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require( /* webpackChunkName: "@atlaskit-internal_atlassian-motion" */
+      './themes/atlassian-motion'));
+    });
+  }
+};
+var _default = exports.default = themeImportsMap;

@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/atlassian-dark",
+  "main": "../dist/cjs/artifacts/tokens-raw/atlassian-dark.js",
+  "module": "../dist/esm/artifacts/tokens-raw/atlassian-dark.js",
+  "module:es2019": "../dist/es2019/artifacts/tokens-raw/atlassian-dark.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/artifacts/tokens-raw/atlassian-dark.d.ts"
+}

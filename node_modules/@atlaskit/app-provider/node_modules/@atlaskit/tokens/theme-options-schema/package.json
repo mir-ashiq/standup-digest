@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/theme-options-schema",
+  "main": "../dist/cjs/theme-options-schema.js",
+  "module": "../dist/esm/theme-options-schema.js",
+  "module:es2019": "../dist/es2019/theme-options-schema.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/theme-options-schema.d.ts"
+}

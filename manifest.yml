@@ -30,8 +30,9 @@ modules:
         - get-standup-digest
         - get-blockers
       followUpPrompt: >-
-        Ask if they'd like the digest posted to a Confluence page or the
-        team channel next time.
+        Offer one of: re-running the digest after standup, listing the
+        current blockers, or generating tomorrow's pre-standup digest.
+        (Do not offer actions you cannot perform.)
 
   # ---------- Actions ----------
   action:
@@ -62,6 +63,14 @@ modules:
           type: string
           required: false
           description: Optional Jira board ID; defaults to the board found in context.
+
+  # ---------- MCP server (same two tools, for custom agents) ----------
+  rovo:mcp:
+    - key: standup-digest-mcp
+      name: Standup Digest tools
+      tools:
+        - get-standup-digest
+        - get-blockers
 
   # ---------- Scheduled daily digest ----------
   scheduledTrigger:

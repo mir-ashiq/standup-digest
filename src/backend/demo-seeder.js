@@ -63,16 +63,22 @@ async function getMyAccountId() {
   }
 }
 
-/** 10 issues: mix of statuses so moved/next/blocked buckets all fill. */
+/**
+ * 10 issues. Statuses fill the moved/next buckets; the blocked bucket is
+ * driven by a REAL "Blocks" issue link (issue 4 is blocked by issue 3),
+ * because fresh Scrum projects have no "Blocked" status — a status-only
+ * demo silently degrades to zero blockers. The link is what
+ * get-blockers and the digest's blocked bucket actually detect.
+ */
 function demoIssues() {
   return [
     { summary: 'Wire up login form', status: 'Done', desc: 'OAuth flow implemented; awaiting review.' },
     { summary: 'Fix date picker on Safari', status: 'In Progress', desc: 'Focus event swallowed by the polyfill.' },
     { summary: 'Export report to CSV', status: 'In Progress', desc: 'Streaming export to avoid memory spikes.' },
-    { summary: 'Blocked: waiting on SSO vendor reply', status: 'Blocked', desc: 'Vendor ticket #4412, escalated Monday.' },
-    { summary: 'Blocked: schema migration needs DBA', status: 'Blocked', desc: 'DBA on call responds after the holiday.' },
-    { summary: 'Design empty states', status: 'To Do', desc: 'Three screens need empty-state illustrations.' },
-    { summary: 'Write onboarding doc', status: 'To Do', desc: '' },
+    { summary: 'SSO vendor reply needed for login fix', status: 'In Progress', desc: 'Vendor ticket #4412, escalated Monday. Blocks the Safari fix below.' },
+    { summary: 'Fix date picker on Safari (blocked variant)', status: 'To Do', desc: 'Waiting on the SSO vendor reply above.', blockedBy: 'SSO vendor reply needed for login fix' },
+    { summary: 'Design empty states', status: 'To Do', desc: 'Three screens need empty-state illustrations.', unassigned: true },
+    { summary: 'Write onboarding doc', status: 'To Do', desc: '', unassigned: true },
     { summary: 'Upgrade Node runtime', status: 'Done', desc: 'Runtime bumped; smoke tests green.' },
     { summary: 'Investigate flaky checkout test', status: 'In Progress', desc: 'Fails ~20% on CI; suspect ordering.' },
     { summary: 'Customer feedback triage', status: 'To Do', desc: "Review last week's tickets from the support inbox." },
@@ -96,6 +102,7 @@ export async function seedDemoData() {
   if (project.error) return project;
 
   const created = [];
+  const bySummary = {};
   for (const spec of demoIssues()) {
     const fields = {
       project: { id: project.id },
@@ -104,10 +111,20 @@ export async function seedDemoData() {
       description: adf(spec.desc),
       labels: ['sd-demo'],
     };
-    if (me) fields.assignee = { id: me };
+    // Leave "Design empty states" and "Write onboarding doc" unassigned so
+    // the digest shows an Unassigned bucket too (a standup reality).
+    if (me && !spec.unassigned) fields.assignee = { id: me };
     const issue = await jpost('/rest/api/3/issue', fields);
     if (!issue.error && issue.key) {
       created.push(issue.key);
+      bySummary[spec.summary] = issue.key;
+      if (spec.blockedBy && bySummary[spec.blockedBy]) {
+        await jpost('/rest/api/3/issueLink', {
+          type: { name: 'Blocks' },
+          inwardIssue: { key: issue.key },
+          outwardIssue: { key: bySummary[spec.blockedBy] },
+        });
+      }
       // Move to the intended status via transitions.
       if (spec.status !== 'To Do') {
         const transitions = await jget(`/rest/api/3/issue/${issue.key}/transitions`);

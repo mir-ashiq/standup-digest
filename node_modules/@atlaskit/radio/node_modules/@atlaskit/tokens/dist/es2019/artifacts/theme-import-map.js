@@ -1,0 +1,58 @@
+/**
+ * THIS FILE WAS CREATED VIA CODEGEN DO NOT MODIFY {@see http://go/af-codegen}
+ *
+ * This file contains a dynamic import for each theme this package exports.
+ * Themes are loaded asynchronously at runtime to minimise the amount of CSS we send to the client.
+ * This allows users to compose their themes and only use the tokens that are requested.
+ * When a new theme is created, the import should automatically be added to the map
+ *
+ * @codegen <<SignedSource::53ff14285f7c9bd19729a6820212b645>>
+ * @codegenCommand yarn build tokens
+ */
+
+const themeImportsMap = {
+  'light': () => import( /* webpackChunkName: "@atlaskit-internal_atlassian-light" */
+  './themes/atlassian-light'),
+  'light-future': () => import( /* webpackChunkName: "@atlaskit-internal_atlassian-light-future" */
+  './themes/atlassian-light-future'),
+  'light-finesse': () => import( /* webpackChunkName: "@atlaskit-internal_atlassian-light-finesse" */
+  './themes/atlassian-light-finesse'),
+  'light-increased-contrast-finesse': () => import( /* webpackChunkName: "@atlaskit-internal_atlassian-light-increased-contrast-finesse" */
+  './themes/atlassian-light-increased-contrast-finesse'),
+  'light-increased-contrast': () => import( /* webpackChunkName: "@atlaskit-internal_atlassian-light-increased-contrast" */
+  './themes/atlassian-light-increased-contrast'),
+  'UNSAFE-dynamic': () => import( /* webpackChunkName: "@atlaskit-internal_UNSAFE-dynamic" */
+  './themes/UNSAFE-dynamic'),
+  'UNSAFE-dynamic-dark': () => import( /* webpackChunkName: "@atlaskit-internal_UNSAFE-dynamic-dark" */
+  './themes/UNSAFE-dynamic-dark'),
+  'UNSAFE-test-light': () => import( /* webpackChunkName: "@atlaskit-internal_UNSAFE-test-light" */
+  './themes/UNSAFE-test-light'),
+  'UNSAFE-test-dark': () => import( /* webpackChunkName: "@atlaskit-internal_UNSAFE-test-dark" */
+  './themes/UNSAFE-test-dark'),
+  'dark': () => import( /* webpackChunkName: "@atlaskit-internal_atlassian-dark" */
+  './themes/atlassian-dark'),
+  'dark-future': () => import( /* webpackChunkName: "@atlaskit-internal_atlassian-dark-future" */
+  './themes/atlassian-dark-future'),
+  'dark-finesse': () => import( /* webpackChunkName: "@atlaskit-internal_atlassian-dark-finesse" */
+  './themes/atlassian-dark-finesse'),
+  'dark-increased-contrast-finesse': () => import( /* webpackChunkName: "@atlaskit-internal_atlassian-dark-increased-contrast-finesse" */
+  './themes/atlassian-dark-increased-contrast-finesse'),
+  'dark-increased-contrast': () => import( /* webpackChunkName: "@atlaskit-internal_atlassian-dark-increased-contrast" */
+  './themes/atlassian-dark-increased-contrast'),
+  'spacing': () => import( /* webpackChunkName: "@atlaskit-internal_atlassian-spacing" */
+  './themes/atlassian-spacing'),
+  'UNSAFE-spacing': () => import( /* webpackChunkName: "@atlaskit-internal_UNSAFE-spacing" */
+  './themes/UNSAFE-spacing'),
+  'typography': () => import( /* webpackChunkName: "@atlaskit-internal_atlassian-typography" */
+  './themes/atlassian-typography'),
+  'UNSAFE-typography': () => import( /* webpackChunkName: "@atlaskit-internal_UNSAFE-typography" */
+  './themes/UNSAFE-typography'),
+  'typography-finesse': () => import( /* webpackChunkName: "@atlaskit-internal_atlassian-typography-finesse" */
+  './themes/atlassian-typography-finesse'),
+  'shape': () => import( /* webpackChunkName: "@atlaskit-internal_atlassian-shape" */
+  './themes/atlassian-shape'),
+  'motion': () => import( /* webpackChunkName: "@atlaskit-internal_atlassian-motion" */
+  './themes/atlassian-motion')
+};
+export { themeImportsMap as themeImportMap };
+export default themeImportsMap;

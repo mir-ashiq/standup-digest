@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/theme-object-to-string",
+  "main": "../dist/cjs/theme-object-to-string.js",
+  "module": "../dist/esm/theme-object-to-string.js",
+  "module:es2019": "../dist/es2019/theme-object-to-string.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/theme-object-to-string.d.ts"
+}

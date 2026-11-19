@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/custom-theme-overrides",
+  "main": "../dist/cjs/custom-theme-overrides.js",
+  "module": "../dist/esm/custom-theme-overrides.js",
+  "module:es2019": "../dist/es2019/custom-theme-overrides.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/custom-theme-overrides.d.ts"
+}

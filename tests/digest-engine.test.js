@@ -86,4 +86,18 @@ describe('renderDigest', () => {
     expect(renderDigest(d)).toContain('BLOCKED: A3');
     expect(renderDigest(d)).toContain('1 blocked item(s)');
   });
+  it('treats unresolved blocking links as blocked (no Blocked status needed)', () => {
+    const d = buildDigest([issue('A4', { blockingLinks: [{ key: 'A3', resolved: false }] })], NOW);
+    expect(d.blockedCount).toBe(1);
+    expect(renderDigest(d)).toContain('BLOCKED: A4');
+  });
+  it('ignores resolved blocking links', () => {
+    const d = buildDigest([issue('A5', { blockingLinks: [{ key: 'A3', resolved: true }] })], NOW);
+    expect(d.blockedCount).toBe(0);
+  });
+  it('respects a custom since-hours window', () => {
+    const d = buildDigest([issue('A6', { updated: iso(NOW - 30 * H) })], NOW, 48);
+    const ada = d.people.find((p) => p.name === 'Ada');
+    expect(ada.moved).toEqual(['A6']);
+  });
 });

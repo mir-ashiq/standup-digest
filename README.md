@@ -8,20 +8,39 @@ Rovo agent, or on a schedule.
 > Standup meetings die when nobody knows what moved. Standup Digest makes the
 > "yesterday / today / blockers" round instant.
 
+## Judge quick path (fresh site, 60 seconds)
+
+> **Install → open Jira → Apps → Standup Digest → "Generate demo project" → Refresh.**
+> The seeder creates the `SDD` project: 10 issues across movers, next-up,
+> unassigned and a real **Blocks** link pair (issue 5 is blocked by issue 4) —
+> so the digest, the blockers list and the blocked bucket all light up without
+> any manual setup. It never touches existing projects.
+
 ## What it does
 
 | Surface | Module | What the user gets |
 |---|---|---|
 | **Digest page** | `jira:globalPage` | Board picker + per-person digest: ✅ moved · ➡️ next · ⛔ blocked |
 | **Standup Digest agent** | `rovo:agent` + 2 actions | "Give me today's standup digest" in Rovo chat — same engine |
-| **Daily refresh** | `scheduledTrigger` | Hourly board refresh keeps digests instant |
+| **MCP server** | `rovo:mcp` | Both tools exposed for your own Rovo Studio agents |
+| **Hourly refresh** | `scheduledTrigger` | Caches each board's latest digest to KVS for instant loads |
 
-## Judge quick path (fresh site, 60 seconds)
 
-The digest page detects an empty site and offers **Generate demo project**:
-one click creates the `SDD` Scrum project with a 10-issue sprint across
-movers, blockers and quiet tickets. Click **Refresh** and a full standup
-digest appears — per-person moved / next / blocked — with no manual setup.
+## Architecture
+
+```mermaid
+flowchart LR
+  P[jira:globalPage<br/>Digest page] --> R[resolver]
+  A[rovo:agent] --> ACT[2 actions]
+  M[rovo:mcp server] --> ACT
+  ST[scheduledTrigger: hourly] --> D[dailyDigest fn]
+  R --> E[pure digest engine<br/>moved/next/blocked + links]
+  ACT --> E
+  D --> E
+  E --> K[(KVS digest cache)]
+  E --> J[(Jira Agile REST)]
+  SEED[demo seeder] --> J
+```
 
 ## Quick start
 

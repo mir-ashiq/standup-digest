@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/theme-config",
+  "main": "../dist/cjs/theme-config.js",
+  "module": "../dist/esm/theme-config.js",
+  "module:es2019": "../dist/es2019/theme-config.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/theme-config.d.ts"
+}

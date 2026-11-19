@@ -1,0 +1,10 @@
+{
+  "name": "@atlaskit/tokens/custom-themes",
+  "main": "../dist/cjs/load-custom-theme-styles.js",
+  "module": "../dist/esm/load-custom-theme-styles.js",
+  "module:es2019": "../dist/es2019/load-custom-theme-styles.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "../dist/types/load-custom-theme-styles.d.ts"
+}

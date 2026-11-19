@@ -4,7 +4,7 @@
  */
 import React, { useEffect, useState } from 'react';
 import ForgeReconciler, {
-  Text, Heading, Stack, Inline, Button, Lozenge, SectionMessage, Spinner,
+  Text, Heading, Stack, Inline, Button, Lozenge, SectionMessage, Spinner, Link,
 } from '@forge/react';
 import { invoke } from '@forge/bridge';
 
@@ -15,9 +15,9 @@ function PersonRow({ person }) {
         <Text weight="semibold">{person.name}</Text>
         {person.blocked.length > 0 && <Lozenge appearance="removed">blocked</Lozenge>}
       </Inline>
-      {person.moved.length > 0 && <Text size="small" as="p">✅ moved: {person.moved.join(', ')}</Text>}
-      {person.next.length > 0 && <Text size="small" as="p">➡️ next: {person.next.join(', ')}</Text>}
-      {person.blocked.length > 0 && <Text size="small" as="p">⛔ blocked: {person.blocked.join(', ')}</Text>}
+      {person.moved.length > 0 && <Text size="small" as="p">✅ moved: {person.moved.map((k) => <Link key={k} href={`/browse/${k}`}>{k}</Link>).reduce((acc, el) => acc === null ? [el] : [...acc, ', ', el], null)}</Text>}
+      {person.next.length > 0 && <Text size="small" as="p">➡️ next: {person.next.map((k) => <Link key={k} href={`/browse/${k}`}>{k}</Link>).reduce((acc, el) => acc === null ? [el] : [...acc, ', ', el], null)}</Text>}
+      {person.blocked.length > 0 && <Text size="small" as="p">⛔ blocked: {person.blocked.map((k) => <Link key={k} href={`/browse/${k}`}>{k}</Link>).reduce((acc, el) => acc === null ? [el] : [...acc, ', ', el], null)}</Text>}
     </Stack>
   );
 }
@@ -29,6 +29,8 @@ function DigestView() {
   const [busy, setBusy] = useState(false);
   const [seeding, setSeeding] = useState(false);
   const [seedMsg, setSeedMsg] = useState(null);
+  const [sinceHours, setSinceHours] = useState(24);
+  const [copied, setCopied] = useState(false);
 
   const loadBoards = () => {
     invoke('getBoards').then((r) => {
@@ -38,8 +40,8 @@ function DigestView() {
   };
   useEffect(loadBoards, []);
   useEffect(() => {
-    if (boardId) invoke('getDigest', { boardId }).then(setState);
-  }, [boardId]);
+    if (boardId) invoke('getDigest', { boardId, sinceHours }).then(setState);
+  }, [boardId, sinceHours]);
 
   const seedDemo = async () => {
     setSeeding(true); setSeedMsg(null);
@@ -60,8 +62,16 @@ function DigestView() {
 
   const refresh = async () => {
     setBusy(true);
-    setState(await invoke('getDigest', { boardId }));
+    setState(await invoke('getDigest', { boardId, sinceHours }));
     setBusy(false);
+  };
+
+  const copyDigest = async () => {
+    try {
+      await navigator.clipboard.writeText(state?.text || '');
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch { /* clipboard unavailable in some hosts */ }
   };
 
   const d = state?.digest;
@@ -75,6 +85,13 @@ function DigestView() {
         {boards.map((b) => (
           <Button key={b.id} appearance={String(b.id) === boardId ? 'primary' : 'default'} spacing="compact" onClick={() => setBoardId(String(b.id))}>{b.name}</Button>
         ))}
+      </Inline>
+      <Inline space="space.050" blockAlign="center">
+        <Text size="small">Since:</Text>
+        {[24, 48, 72].map((h) => (
+          <Button key={h} appearance={sinceHours === h ? 'primary' : 'default'} spacing="compact" onClick={() => setSinceHours(h)}>{h}h</Button>
+        ))}
+        {state?.text && <Button spacing="compact" onClick={copyDigest}>{copied ? 'Copied!' : 'Copy digest text'}</Button>}
       </Inline>
       {!state && <Spinner label="Loading digest…" />}
       {boards.length === 0 && (
