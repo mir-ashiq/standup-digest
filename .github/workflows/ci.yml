@@ -11,6 +11,6 @@ jobs:
         with: { node-version: 20, cache: npm }
       - run: npm ci
       - name: Unit tests
-        run: npx vitest run --coverage
+        run: npx vitest run
       - name: Manifest lint (structural)
         run: npx yaml manifest.yml > /dev/null && echo "manifest.yml parses"
